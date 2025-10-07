@@ -126,7 +126,7 @@ h2 {
 }  
   
 .contact ul li a.lichess-link:hover {  
-  color: #ff1a1a;  
+  color: #ff1a1a !important;  
 }
 
 /* Footer */
