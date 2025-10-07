@@ -120,6 +120,14 @@ h2 {
   padding-bottom: 0.3rem;
   margin-top: 0;
 }
+.contact ul li a.lichess-link {  
+  color: #ff4d4d;  
+  text-decoration: none !important;  
+}  
+  
+.contact ul li a.lichess-link:hover {  
+  color: #ff1a1a;  
+}
 
 /* Footer */
 footer {
