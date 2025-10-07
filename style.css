@@ -133,7 +133,7 @@ footer {
 
 footer ul li a.lichess-link {
   color: #ff4d4d;       /* red by default */
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 footer ul li a.lichess-link:hover {
