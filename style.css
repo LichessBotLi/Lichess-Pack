@@ -11,12 +11,12 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 300;
+  z-index: 200;
   top: 0;
   left: 0;
   background-color: #1e293b;
   overflow-x: hidden;
-  transition: width 0.3s ease;
+  transition: 0.3s;
   padding-top: 2rem;
 }
 
