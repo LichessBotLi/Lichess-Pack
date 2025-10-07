@@ -11,30 +11,30 @@ body {
 header {
   background-color: #1e293b;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #38bdf8;
 }
 
 .tagline {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #94a3b8;
   margin-top: 0.5rem;
 }
 
 /* Main content */
 main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 900px; /* Wider for desktop */
+  margin: 3rem auto;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 section {
@@ -63,7 +63,7 @@ a:hover {
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #1e293b;
   color: #94a3b8;
   font-size: 0.9rem;
@@ -85,7 +85,7 @@ footer {
   main {
     margin: 1rem;
     padding: 0;
-    flex-direction: column;
+    gap: 1rem;
   }
 
   section {
@@ -101,26 +101,35 @@ footer {
   }
 }
 
-/* Desktop / large screens */
-@media (min-width: 1000px) {
+/* Medium screens (tablet) */
+@media (min-width: 601px) and (max-width: 999px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
   main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    max-width: 700px;
+    padding: 0 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  main {
+    max-width: 1000px; /* Google-like width */
     padding: 0 3rem;
   }
 
-  section.about, section.motif {
-    /* side-by-side layout for About and Motif */
-    display: block;
-  }
-
-  section.contact {
-    grid-column: 1 / -1; /* full width */
-  }
-
-  h1 {
-    font-size: 3rem;
+  section {
+    padding: 2.5rem;
   }
 
   h2 {
