@@ -121,6 +121,7 @@ h2 {
   margin-top: 0;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -128,6 +129,14 @@ footer {
   color: #94a3b8;
   font-size: 0.9rem;
   border-top: 1px solid #334155;
+}
+
+footer ul li a.lichess-link {
+  color: #ff4d4d; /* red color for Lichess link */
+}
+
+footer ul li a.lichess-link:hover {
+  color: #ff1a1a; /* darker red on hover */
 }
 
 /* ---------------- Responsive ---------------- */
@@ -150,5 +159,17 @@ footer {
 
   h2 {
     font-size: 1.3rem;
+  }
+}
+
+/* ---------------- Sidebar submenu on mobile ---------------- */
+@media (max-width: 768px) {
+  .sidebar ul li .submenu {
+    display: none;
+    padding-left: 1rem;
+  }
+
+  .sidebar ul li.active .submenu {
+    display: block;
   }
 }
