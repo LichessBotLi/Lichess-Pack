@@ -8,35 +8,47 @@
 </head>
 <body>
   <header>
-    <h1>Lichess Package Project</h1>
+    <div class="logo">
+      <h1>Lichess Package Project</h1>
+    </div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Messages ▼</a>
+          <ul class="dropdown">
+            <li><a href="Team/team.html">Team Messages</a></li>
+            <li><a href="Pm/pm.html">Private Messages</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
     <p class="tagline">An open project to enhance community automation and creativity on Lichess</p>
   </header>
 
   <main>
-    <section class="about">
+    <section id="about" class="about">
       <h2>About the Project</h2>
       <p>
         The <strong>Lichess Package Project</strong> is an experimental initiative created by 
         <strong>realboy9000</strong> to make Lichess automation, community tools, and workflows 
-        easier for everyone. The goal is to simplify how teams and users interact with 
-        Lichess through smart bots, scheduled tools, and GitHub integration.
+        easier for everyone.
       </p>
     </section>
 
-    <section class="motif">
+    <section id="motif" class="motif">
       <h2>Project Motif</h2>
       <p>
         This project stands for <em>openness, collaboration, and innovation</em>.  
         It’s about building powerful yet accessible utilities that make managing Lichess 
-        activities smoother — from team announcements to scheduled challenges.
+        activities smoother.
       </p>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <h2>Contact</h2>
-      <p>
-        You can reach the creator at:
-      </p>
+      <p>You can reach the creator at:</p>
       <ul>
         <li><strong>Lichess:</strong> <a href="https://lichess.org/@/realboy9000" target="_blank">realboy9000</a></li>
         <li><strong>Discord:</strong> realboy9000</li>
