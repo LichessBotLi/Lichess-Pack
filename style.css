@@ -29,14 +29,16 @@ body {
   padding: 1rem 2rem;
 }
 
-.sidebar ul li a, .sidebar ul li span {
+.sidebar ul li a,
+.sidebar ul li span {
   color: #38bdf8;
   text-decoration: none;
   cursor: pointer;
   display: block;
 }
 
-.sidebar ul li a:hover, .sidebar ul li span:hover {
+.sidebar ul li a:hover,
+.sidebar ul li span:hover {
   color: #0ea5e9;
 }
 
@@ -61,20 +63,44 @@ body {
   display: block;
 }
 
-/* Hamburger button */
+/* ---------------- Animated Hamburger ---------------- */
 .hamburger {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #38bdf8;
-  cursor: pointer;
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  left: 0.8rem;
   z-index: 201;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
 }
 
-/* Main content shift when sidebar open */
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: #38bdf8;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Transform bars into X when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ---------------- Main content ---------------- */
 .main-content {
   transition: margin-left 0.3s;
   padding-left: 2rem;
@@ -111,7 +137,7 @@ section {
   background-color: #1e293b;
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -120,13 +146,15 @@ h2 {
   padding-bottom: 0.3rem;
   margin-top: 0;
 }
-.contact ul li a.lichess-link {  
-  color: #ff4d4d;  
-  text-decoration: none !important;  
-}  
-  
-.contact ul li a.lichess-link:hover {  
-  color: #ff1a1a !important;  
+
+/* Contact link color */
+.contact ul li a.lichess-link {
+  color: #ff4d4d;
+  text-decoration: none !important;
+}
+
+.contact ul li a.lichess-link:hover {
+  color: #ff1a1a !important;
 }
 
 /* Footer */
@@ -140,12 +168,12 @@ footer {
 }
 
 footer ul li a.lichess-link {
-  color: #ff4d4d;       /* red by default */
+  color: #ff4d4d;
   text-decoration: none !important;
 }
 
 footer ul li a.lichess-link:hover {
-  color: #ff1a1a;       /* darker red on hover */
+  color: #ff1a1a;
 }
 
 /* ---------------- Responsive ---------------- */
