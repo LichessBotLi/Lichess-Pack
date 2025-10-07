@@ -132,11 +132,12 @@ footer {
 }
 
 footer ul li a.lichess-link {
-  color: #ff4d4d; /* red color for Lichess link */
+  color: #ff4d4d;       /* red by default */
+  text-decoration: none;
 }
 
 footer ul li a.lichess-link:hover {
-  color: #ff1a1a; /* darker red on hover */
+  color: #ff1a1a;       /* darker red on hover */
 }
 
 /* ---------------- Responsive ---------------- */
