@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.classList.toggle('active', isOpen);
     overlay.classList.toggle('show', isOpen);
 
-    // Optional: shift main content
-    mainContent.style.marginLeft = isOpen ? '250px' : '0';
-
     // Hide submenu when closing
     if (!isOpen) {
       const activeSubmenu = document.querySelector('.has-submenu.active');
@@ -31,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebar.classList.remove('open');
     hamburger.classList.remove('active');
     overlay.classList.remove('show');
-    mainContent.style.marginLeft = '0';
   });
 
   // --- Toggle Messages submenu ---
