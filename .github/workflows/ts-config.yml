@@ -1,7 +1,7 @@
 name: Compile TypeScript
 
 on:
-  workflow_dispatch:   # manual run
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # ensures push works with GITHUB_TOKEN
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -24,15 +26,15 @@ jobs:
       - name: Install TypeScript
         run: npm install -g typescript
 
-      - name: Compile TypeScript to JavaScript
+      - name: Compile TypeScript
         run: tsc --project tsconfig.json
 
       - name: Commit compiled JS
-        env:
-          TOKEN: ${{ secrets.EXO }}  # your personal access token
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
           git add '**/*.js'
           git diff --cached --quiet || git commit -m "Compile TypeScript to JS [skip ci]"
-          git push https://$TOKEN@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
