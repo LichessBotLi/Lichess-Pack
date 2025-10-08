@@ -1,8 +1,7 @@
 name: Compile TypeScript
 
-# Trigger manually or on push to main branch
 on:
-  workflow_dispatch:   # allows manual run
+  workflow_dispatch:   # manual run
   push:
     branches:
       - main
@@ -29,9 +28,11 @@ jobs:
         run: tsc --project tsconfig.json
 
       - name: Commit compiled JS
+        env:
+          TOKEN: ${{ secrets.EXO }}  # your personal access token
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add '**/*.js'
           git diff --cached --quiet || git commit -m "Compile TypeScript to JS [skip ci]"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+          git push https://$TOKEN@github.com/${{ github.repository }} HEAD:${{ github.ref }}
