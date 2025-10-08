@@ -1,11 +1,13 @@
 name: Compile TypeScript
 
+# Trigger manually or on push to main branch
 on:
+  workflow_dispatch:   # allows manual run
   push:
     branches:
-      - main  # or your default branch
+      - main
     paths:
-      - '**/*.ts'  # trigger on any TypeScript file
+      - '**/*.ts'
 
 jobs:
   build:
@@ -18,16 +20,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # or your preferred Node.js version
+          node-version: '20'
 
-      - name: Install dependencies
-        run: |
-          npm install -g typescript
+      - name: Install TypeScript
+        run: npm install -g typescript
 
       - name: Compile TypeScript to JavaScript
-        run: |
-          # Compile all TS files in repo
-          tsc --project tsconfig.json
+        run: tsc --project tsconfig.json
 
       - name: Commit compiled JS
         run: |
@@ -35,4 +34,4 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add '**/*.js'
           git diff --cached --quiet || git commit -m "Compile TypeScript to JS [skip ci]"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
