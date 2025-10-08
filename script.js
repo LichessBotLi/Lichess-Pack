@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContent = document.getElementById('mainContent');
 
   // --- Toggle sidebar ---
-  hamburger.addEventListener('click', () => {
-    const isOpen = sidebar.classList.toggle('open');
-    hamburger.classList.toggle('active', isOpen);
+   hamburger.addEventListener('click', (e) => {  
+    e.stopPropagation();  
+    const isOpen = sidebar.classList.toggle('open');  
+    hamburger.classList.toggle('active', isOpen);  
     overlay.classList.toggle('show', isOpen);
-
     // Hide submenu when closing
     if (!isOpen) {
       const activeSubmenu = document.querySelector('.has-submenu.active');
