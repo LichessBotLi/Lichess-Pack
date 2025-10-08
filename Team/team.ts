@@ -8,7 +8,6 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   overlay.style.display = isOpen ? 'block' : 'none';
 });
-
 // Close sidebar when clicking outside
 overlay.addEventListener('click', () => {
   sidebar.classList.remove('open');
