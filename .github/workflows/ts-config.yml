@@ -1,0 +1,38 @@
+name: Compile TypeScript
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+    paths:
+      - '**/*.ts'  # trigger on any TypeScript file
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # or your preferred Node.js version
+
+      - name: Install dependencies
+        run: |
+          npm install -g typescript
+
+      - name: Compile TypeScript to JavaScript
+        run: |
+          # Compile all TS files in repo
+          tsc --project tsconfig.json
+
+      - name: Commit compiled JS
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add '**/*.js'
+          git diff --cached --quiet || git commit -m "Compile TypeScript to JS [skip ci]"
+          git push
