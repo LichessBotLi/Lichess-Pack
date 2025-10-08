@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team Page</title>
+  <title>Lichess Package Project</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- Hamburger Menu & Sidebar -->
-  <div id="overlay" class="overlay"></div>
+  <!-- Sidebar -->
   <div id="sidebar" class="sidebar">
     <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="../Pm/pm.html">About</a></li>
-      <!-- Add more links as needed -->
+      <li><a href="index.html">Home</a></li>
+      <li class="has-submenu">
+        <span id="messagesToggle">Messages ▾</span>
+        <ul class="submenu">
+          <li><a href="Team/team.html">Team Messages</a></li>
+          <li><a href="Pm/pm.html">Private Messages</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 
-  <!-- Header with hamburger -->
-  <header>
-    <button id="hamburger" class="hamburger">&#9776;</button>
-    <h1>Feature will be comming soon.</h1>
-  </header>
+  <!-- Overlay (click outside to close) -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Animated Hamburger -->
+  <button id="hamburger" class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Main content -->
+  <div id="mainContent
 
   <!-- Page Content -->
   <main>
